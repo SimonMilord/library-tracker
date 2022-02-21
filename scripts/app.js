@@ -1,23 +1,26 @@
 
 let myLibrary = [
-  {
-    title: 'The Lord of The Rings',
-    author: 'JRR Tolkien',
-    pages: 1000,
-    read: true,
-  },
-  {
-    title: 'One Up Wallstreet',
-    author: 'Peter Lynch',
-    pages: 300,
-    read: true,
-  },
-  {
-    title: 'Sapiens',
-    author: 'Noah Yuval Harrari',
-    pages: 400,
-    read: false,
-  }
+  // {
+  //   title: 'The Lord of The Rings',
+  //   author: 'JRR Tolkien',
+  //   pages: 1000,
+  //   read: true,
+  //   bookId: 0,
+  // },
+  // {
+  //   title: 'One Up Wallstreet',
+  //   author: 'Peter Lynch',
+  //   pages: 300,
+  //   read: true,
+  //   bookId: 1,
+  // },
+  // {
+  //   title: 'Sapiens',
+  //   author: 'Noah Yuval Harrari',
+  //   pages: 400,
+  //   read: false,
+  //   bookId: 2,
+  // }
 ];
 // gather dom elements
 const newBookBtn = document.getElementById("newbook");
@@ -30,10 +33,9 @@ const checkBoxInput = document.querySelector(".modal-input-check");
 const cancelBtn = document.getElementById("cancel");
 const addBtn = document.getElementById("add");
 const form = document.querySelector('.book-form');
-// list
 const list = document.querySelector(".list");
-// card buttons
-const deleteBtn = document.getElementById('delete');
+const del = document.getElementById('delete');
+
 
 function Book(title, author, pages, read) {
   this.title = title
@@ -70,6 +72,10 @@ function createCard(element, className, text = null) {
   return domLi;
 }
 
+function closeModal() {
+  myModal.style.display = "none";
+}
+
 function renderLibrary() {
   // myLibrary.innerText = '';
 
@@ -82,9 +88,11 @@ function renderLibrary() {
     const cardPages = createCard('p', 'book__info', book.pages + ' Pages');
     // bottom of card
     const cardBottom = createCard('div', 'list__card-bottom');
-    const readBtn = createCard('button', 'btn', 'Read?');
+    const readBtn = createCard('a', 'btn', 'Read?');
+    readBtn.setAttribute('type', 'submit');
     readBtn.setAttribute('id', 'read');
-    const deleteBtn = createCard('button', 'btn', 'Delete');
+    const deleteBtn = createCard('a', 'btn', 'Delete');
+    deleteBtn.setAttribute('type', 'submit');
     deleteBtn.setAttribute('id', 'delete');
 
     // appending it all together:
@@ -96,13 +104,20 @@ function renderLibrary() {
     bookLi.appendChild(cardTop);
     bookLi.appendChild(cardBottom);
     list.appendChild(bookLi);
+
+    deleteBtn.addEventListener('click', event => {
+      let b = event.target;
+      let cardInner = b.parentElement;
+      let wholeCard = cardInner.parentElement;
+
+      wholeCard.parentElement.removeChild(wholeCard);
+    })
   })
 }
 
 renderLibrary(myLibrary);
 
-function closeModal() {
-  myModal.style.display = "none";
-}
+
+
 
 
