@@ -4,9 +4,57 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css"/>
   <title>Library</title>
+  <link rel="icon" href="books-icon.png" type="image/icon type">
 </head>
 <body>
-  <header>hello</header>
+  <header class="header">
+    <h1 class="header-title">Library</h1>
+    <p class="header-desc">Click the button below to add books to your library</p>
+    <button class="newbook-btn" id="newbook">New Book</button>
+  </header>
+  <main class="main">
+    <div class="card-container">
+      <ul class="list">
+        <!-- LIST ITEM TO GENERATE DYNAMICALLY TEMPLATE -->
+        <li class="list__item">
+          <div class="list__card-top">
+            <p class="book__info book__title">Book Title</p>
+            <p class="book__info book__author">Book Author</p>
+            <p class="book__info book__pages">Book Pages</p>
+          </div>
+          <div class="list__card-bottom">
+            <button type="submit" class="btn" id="read">Read?</button>
+            <button type="submit" class="btn" id="delete">Delete</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+      <!-- The Modal -->
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <form class="book-form">
+            <label class="modal-label">Title <input type="text" class="modal-input"></label>
+            <label class="modal-label">Author <input type="text" class="modal-input"></label>
+            <label class="modal-label">Pages <input type="number" class="modal-input"></label>
+            <label class="modal-label checkbox">Did you already read that book before?<input type="checkbox" class="modal-input check"></label>
+            <div class="btn-box">
+              <button type="submit" class="modal-cancelBtn btn" id="cancel">Cancel</button>
+              <button type="submit" class="modal-addBtn btn" id="add">Add</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <a href="https://github.com/SimonMilord" class="copyright">&copy SimonMilord</a>
+  </footer>
+  <script src="./scripts/modal.js"></script>
+  <script src="./scripts/app.js"></script>
 </body>
 </html>
