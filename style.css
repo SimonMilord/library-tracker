@@ -53,6 +53,8 @@ header {
 
 .list {
   padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .list__item {
@@ -67,6 +69,8 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin: 2rem;
+  min-width: 12rem;
 }
 
 .list__card-top {
@@ -81,7 +85,7 @@ header {
 
 .list__card-bottom {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 #read {
   color: #FFF;

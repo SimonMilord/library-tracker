@@ -38,12 +38,12 @@
       <div id="modal" class="modal">
         <div class="modal-content">
           <form class="book-form">
-            <label class="modal-label">Title <input type="text" class="modal-input"></label>
-            <label class="modal-label">Author <input type="text" class="modal-input"></label>
-            <label class="modal-label">Pages <input type="number" class="modal-input"></label>
-            <label class="modal-label checkbox">Did you already read that book before?<input type="checkbox" class="modal-input check"></label>
+            <label class="modal-label">Title <input type="text" name="bookTitle" class="modal-input modal-input-title"></label>
+            <label class="modal-label">Author <input type="text" name="bookAuthor" class="modal-input modal-input-author"></label>
+            <label class="modal-label">Pages <input type="number" name="bookPages" class="modal-input modal-input-pages"></label>
+            <label class="modal-label checkbox">Have you read that book before?<input type="checkbox" name="readBefore" class="modal-input modal-input-check check"></label>
             <div class="btn-box">
-              <button type="submit" class="modal-cancelBtn btn" id="cancel">Cancel</button>
+              <button type="button" class="modal-cancelBtn btn" id="cancel">Cancel</button>
               <button type="submit" class="modal-addBtn btn" id="add">Add</button>
             </div>
           </form>
