@@ -1,26 +1,4 @@
-let myLibrary = [
-  {
-    title: 'The Lord of The Rings',
-    author: 'JRR Tolkien',
-    pages: 1000,
-    read: true,
-    bookId: 0,
-  },
-  {
-    title: 'One Up Wallstreet',
-    author: 'Peter Lynch',
-    pages: 300,
-    read: true,
-    bookId: 1,
-  },
-  {
-    title: 'Sapiens',
-    author: 'Noah Yuval Harrari',
-    pages: 400,
-    read: false,
-    bookId: 2,
-  }
-];
+let myLibrary = [];
 
 // gather dom elements
 const newBookBtn = document.getElementById("newbook");
