@@ -15,4 +15,3 @@ I practiced the following:
   - add authentication 
 
 
-[Demo here](https://simonmilord.github.io/library-tracker/)
